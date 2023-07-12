@@ -1,9 +1,9 @@
-import { Header } from './Components/Header'
+import { Banner } from './Components/Header'
 
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Banner />
     </div>
   )
 }
