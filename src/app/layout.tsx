@@ -1,6 +1,5 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from './Components/Header'
 
 const inter = Inter({
   subsets: ['latin']
@@ -17,8 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel='icon' href='tmdb-favicon.png' />
       </head>
-      <body className={`${inter.className} sm:px-5 px-3`}>
-        <Header />
+      <body className={`${inter.className} sm:px-8 px-4`}>
         {children}
       </body>
     </html>
