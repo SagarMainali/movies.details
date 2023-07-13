@@ -1,4 +1,4 @@
-import { Banner } from './Components/Header'
+import Banner from './Components/Headers/Banner'
 
 export default function Home() {
   return (

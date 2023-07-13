@@ -1,9 +1,7 @@
-// this file contain Header components ie. Navbar and Banner
-
 import Image from "next/image"
 import Link from "next/link"
 
-export function Navbar() {
+export default function Navbar() {
      return (
           // <div className="bg-primary-dark sticky top-0 w-full z-10 py-3.5">
           <div className="fixed w-[calc(100%-2rem)] z-10 py-3.5 bg-primary-dark/50">
@@ -18,17 +16,5 @@ export function Navbar() {
                     </ul>
                </div>
           </div>
-     )
-}
-
-export function Banner() {
-     return (
-          <header>
-               <div className="h-[70vh] bg-[url('/test-image.jpg')] bg-no-repeat bg-cover bg-center">
-                    <div className="test h-full w-full">
-                         {/* <Image src={''} alt="banner-image"/> */}
-                    </div>
-               </div>
-          </header>
      )
 }
