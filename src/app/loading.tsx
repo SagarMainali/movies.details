@@ -1,6 +1,6 @@
 import './styles/loading.css'
 
-function loading() {
+export default function loading() {
      return (
           <div className='loading-container'>
                <div className="lds-roller">
@@ -16,5 +16,3 @@ function loading() {
           </div>
      )
 }
-
-export default loading
