@@ -11,6 +11,14 @@ module.exports = {
         'primary-dark': '#001C30',
         'secondary-light': '#FDFDFF',
       },
+      screens: {
+        'xsm': '500px',
+        'sm': '600px',
+        'md': '760px',
+        'lg': '1040px',
+        'xl': '1300px',
+        '2xl': '1500px',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

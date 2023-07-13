@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Navbar() {
      return (
           // <div className="bg-primary-dark sticky top-0 w-full z-10 py-4">
-          <div className="fixed w-[calc(100%-3rem)] z-10 py-4 bg-primary-dark/60">
+          <div className="fixed w-full max-2xl:w-[calc(100%-40px)] z-10 py-4 bg-primary-dark/60 max-w-[1500px]">
                <div className="flex justify-between items-center">
                     <Link href={'./'}>
                          <Image src={'/tmdb-logo.svg'} alt="tmbd-logo" width={140} height={100} />
