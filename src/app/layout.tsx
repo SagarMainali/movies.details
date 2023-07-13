@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel='icon' href='/tmdb-favicon.png' />
       </head>
-      <body id='root' className={`${inter.className} relative bg-primary-dark text-secondary-light`}>
+      <body className={`${inter.className} max-w-[1500px] mx-auto max-2xl:px-5 bg-primary-dark text-slate-300`}>
         <Navbar />
         {children}
       </body>

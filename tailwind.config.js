@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         'primary-dark': '#001C30',
         'secondary-light': '#FDFDFF',
+        'logo-inherit': '#0FB6DF',
       },
       screens: {
         'xsm': '500px',
