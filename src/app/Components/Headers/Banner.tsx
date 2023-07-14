@@ -16,6 +16,7 @@ export default function Banner() {
                     showStatus={false}
                     transitionTime={600}
                     useKeyboardArrows={true}
+                    showThumbs={false}
                >
                     <div className="h-[90vh] bg-[url('/test-image.jpg')] bg-no-repeat bg-cover bg-center">
                          <GradientOverlay></GradientOverlay>
