@@ -19,7 +19,7 @@ export default function Banner() {
                     showThumbs={false}
                >
                     <div className="h-[90vh] bg-[url('/test-image.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay></GradientOverlay>
+                         <GradientOverlay />
                     </div>
                     <div className="h-[90vh] bg-[url('/test-image2.jpg')] bg-no-repeat bg-cover bg-center">
                          <GradientOverlay />
