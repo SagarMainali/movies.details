@@ -3,9 +3,17 @@
 import GradientOverlay from './GradientOverlay'
 import './banner_gradient_style.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'
+import { useEffect } from 'react'
+import { fetchDataFromApi } from '@/app/utils/api'
 
 export default function Banner() {
+
+     useEffect(() => {
+          const test_data = fetchDataFromApi('/discover/movie')
+          console.log(test_data)
+     }, [])
+
      return (
           <header>
                <Carousel
