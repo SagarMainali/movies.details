@@ -4,14 +4,19 @@ import GradientOverlay from './GradientOverlay'
 import './banner_gradient_style.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { fetchDataFromApi } from '@/app/utils/api'
 
 export default function Banner() {
 
+     const [trending, setTrending] = useState([])
+
      useEffect(() => {
-          const test_data = fetchDataFromApi('/discover/movie')
-          console.log(test_data)
+          fetchDataFromApi('/trending/all/day')
+               .then(results => {
+                    setTrending(results)
+                    console.log(results)
+               })
      }, [])
 
      return (
@@ -19,40 +24,20 @@ export default function Banner() {
                <Carousel
                     infiniteLoop={true}
                     autoPlay={true}
-                    interval={3000}
                     emulateTouch={true}
                     showStatus={false}
                     transitionTime={600}
                     useKeyboardArrows={true}
                     showThumbs={false}
                >
-                    <div className="h-[90vh] bg-[url('/test-image.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image2.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image3.webp')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image4.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image5.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image6.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image7.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image8.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
-                    <div className="h-[90vh] bg-[url('/test-image9.jpg')] bg-no-repeat bg-cover bg-center">
-                         <GradientOverlay />
-                    </div>
+                    {
+                         trending && trending.map((movie: { backdrop_path: string, id: number }) => (
+                              // <div key={movie.id} className={`h-[90vh] max-h-[700px] bg-[url(https://image.tmdb.org/t/p/original${movie.backdrop_path})] bg-no-repeat bg-cover bg-center`}>
+                              <div key={movie.id} className='h-[90vh] max-h-[700px] bg-no-repeat bg-cover bg-center' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})` }}>
+                                   <GradientOverlay />
+                              </div>
+                         ))
+                    }
                </Carousel>
           </header >
      )
